@@ -1,0 +1,5 @@
+spring boot
+jpa
+mysql
+security
+tomcat
