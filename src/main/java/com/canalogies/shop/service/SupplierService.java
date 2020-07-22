@@ -28,6 +28,9 @@ public class SupplierService {
 	
 	public void saveSupplier(Supplier supplier) {
 		supplierRepository.save(supplier);
+		supplier=supplierRepository.findById(supplier.getId()).get();
+		supplier.setSupplierId("SUP_"+supplier.getId());
+		updateSupplier(supplier);
 	}
 	
 	public void updateSupplier(Supplier supplier) {

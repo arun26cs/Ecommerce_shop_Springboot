@@ -19,8 +19,12 @@ public class ProductService {
 		return products;
 	}
 	
-	public Product getProduct(String productName){
-		Product product = productRepository.findByProductName(productName);
+	public Product getProductId(int id) {
+		return productRepository.findById(id).get();
+	}
+	
+	public List<Product> getProduct(String productName){
+		List<Product> product = productRepository.findByProductName(productName);
 		return product;
 	}
 	
@@ -36,7 +40,7 @@ public class ProductService {
 	
 	public void saveProduct(Product product) {
 		productRepository.save(product);
-		product = getProduct(product.getProductId());
+		product = getProductId(product.getId());
 		product.setProductId("prod_"+product.getId());
 		updateProduct(product);
 	}

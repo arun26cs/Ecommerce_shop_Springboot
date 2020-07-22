@@ -13,6 +13,6 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
 	public List<Product> findByCategoryId(int catid);//id inside Category
 	public List<Product> findBySupplierId(int supid);//id inside Category
-	public Product findByProductName(String productName);
+	public List<Product> findByProductName(String productName);
 	
 }
