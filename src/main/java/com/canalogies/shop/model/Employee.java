@@ -7,29 +7,37 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table 
-public class Customer {
-	
+@Table
+public class Employee {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int customerid;
-	String customername;
-	String username;
-	String password;
-	String email;
-	String phone;
-	String address;
-	public int getCustomerid() {
-		return customerid;
+	private int id;
+	private String empId;
+	private String empName;
+	private String username;
+	private String password;
+	private String email;
+	private String phone;
+	private String address;
+	private String type;
+	public int getId() {
+		return id;
 	}
-	public void setCustomerid(int customerid) {
-		this.customerid = customerid;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getCustomername() {
-		return customername;
+	public String getEmpId() {
+		return empId;
 	}
-	public void setCustomername(String customername) {
-		this.customername = customername;
+	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 	public String getUsername() {
 		return username;
@@ -61,18 +69,27 @@ public class Customer {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Customer(int customerid, String customername, String username, String password, String email, String phone,
-			String address) {
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Employee(int id, String empId, String empName, String username, String password, String email, String phone,
+			String address,String type) {
 		super();
-		this.customerid = customerid;
-		this.customername = customername;
+		this.id = id;
+		this.empId = empId;
+		this.empName = empName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
+		this.type = type;
 	}
-	public Customer() {
+	public Employee() {
 		 
 	}
 	
