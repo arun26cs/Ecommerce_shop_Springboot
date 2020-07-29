@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.canalogies.shop.repository.CustomerRepository;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = {CustomerRepository.class})
 public class ShopBootApplication {
 
 	public static void main(String[] args) {
